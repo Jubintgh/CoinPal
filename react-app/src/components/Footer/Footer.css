@@ -1,3 +1,10 @@
+*  
+    { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+}
+
 .main-footer {
     /* background-color: #169bd7; */
     background-image: linear-gradient(to right, #169bd7 , #0074DE);
