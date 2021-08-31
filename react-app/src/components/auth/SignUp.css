@@ -1,22 +1,25 @@
 .form-container{
     display: flex;
     justify-content: center;
+    width: 100%;
+    height: auto;
 }
 .signup-page{
     width: 100%;
     height: 100%;
     display: flex;
     background: url('https://user-images.githubusercontent.com/73211975/128579949-f12b031b-60ef-4488-b5ac-c3188ab3afa4.jpeg');
-    background-color: #4983e0;
+    background-size: cover;
     flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    align-items:flex-start;
+    /* flex-wrap: wrap; */
+    align-items:center;
+    width: 100%;
+    height: auto;
 }
 
 .signup_info_container{
+    width: 100%;
+    height: auto;
     background-color: rgba(255, 255, 255, 0.3);
 }
 

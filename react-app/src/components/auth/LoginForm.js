@@ -39,7 +39,6 @@ const LoginForm = () => {
   }
 
   return (
-      <div class='login_background_img'>
     <form className="login_page" onSubmit={onLogin}>
       <h1 className='Title_text'>Welcome to CoinPal</h1>
       <div className='errors__class'>
@@ -87,7 +86,6 @@ const LoginForm = () => {
         <button className="signup_btn" onClick={() => window.location.href='/sign-up'}>Sign Up </button>
       </div>
     </form>
-    </div>
   );
 };
 
