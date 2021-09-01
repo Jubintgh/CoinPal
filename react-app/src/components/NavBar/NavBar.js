@@ -31,7 +31,6 @@ const NavBar = () => {
   } else {
     navContent = (
         <ul className="navbar">
-
           <NavLink id='navbar__logo' to='/my/home'>
             <img  id='navbar__img' src='https://user-images.githubusercontent.com/73211975/127380259-8872d61e-851a-4aa5-8152-baec2618e00d.png' alt='logo'/>
           </NavLink>
@@ -39,32 +38,22 @@ const NavBar = () => {
             <NavLink to='/my/contacts' exact={true}  activeClassName='active'>
               Contacts
             </NavLink>
-          </li>
-          <li className='navbar__link'>
-          <NavLink to='/users' exact={true} activeClassName='active'>
-            Users
-          </NavLink>
-        </li>
-          <li className="navbar__link">
+            <NavLink to='/users' exact={true} activeClassName='active'>
+              Users
+            </NavLink>
             <NavLink to={`/my/transaction/history`} exact={true} activeClassName='active'>
               Activity
             </NavLink>
-          </li>
-          <li className="navbar__link">
             <NavLink to={`/my/wallet`} exact={true} activeClassName='active'>
               Wallet
             </NavLink>
-          </li>
-          <li className="navbar__link">
             <NavLink to={`/my/SendNrequest`} exact={true} activeClassName='active'>
               Send and Request
             </NavLink>
           </li>
           <li className="navbar__logout_button">
-            <LogoutButton />
-          </li>
-          <li>
             <img className="logged_in_profile" src={user.img} alt='profile-pic'/>
+            <LogoutButton/>
           </li>
         </ul>
     )

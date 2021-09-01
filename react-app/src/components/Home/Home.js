@@ -91,8 +91,8 @@ const Home = () => {
                 ))}
             </div> */}
             <div className='side_bar'>
-                <img id='side_bar_logo' src='https://user-images.githubusercontent.com/73211975/127380259-8872d61e-851a-4aa5-8152-baec2618e00d.png' alt='logo'/>
-                <h4 id='side_bar_title'>Coin Pal</h4>
+                {/* <img id='side_bar_logo' src='https://user-images.githubusercontent.com/73211975/127380259-8872d61e-851a-4aa5-8152-baec2618e00d.png' alt='logo'/> */}
+                <h1 id='side_bar_title'>Menu</h1>
                 {Object.keys(sideBarObjects).map(bar => 
                     (<button className='home_navbar_btns' onClick={() => setDisplay(sideBarObjects[bar])}>{bar}</button>)
                 )}

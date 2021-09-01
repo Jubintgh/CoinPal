@@ -6,7 +6,7 @@
   width: 80%;
   /* padding: 20px; */
   position: relative;
-  background-color: #F4F7FA;
+  background-color: #e2f0ffb9;
   align-self: center;
   justify-self: center;
   justify-content: center;
@@ -15,7 +15,9 @@
 }
 
 .crypto_search_bar{
-  width: 40vw;
+  border: thick solid black;
+  width: 80%;
+  margin: 5vh;
 }
 
 #side_bar_logo{
@@ -26,11 +28,15 @@
 }
 
 #side_bar_title{
-  color: white;
+  margin: 38px;
+  color: rgb(0, 0, 0);
   font-weight: bolder;
-  font-size: larger;
+  font-size: x-large;
   justify-self: center;
   align-self: center;
+  font-size: larger;
+  font-weight: bold;
+  border-bottom: solid thick #0db2ff;
 }
 
 #profile-img{
@@ -49,16 +55,18 @@
   box-sizing: border-box;
   /* border-radius: 10px; */
   height: 100%;
+  overflow: scroll;
+  justify-content: space-between;
 }
 
 .side_bar{
   display: flex;
   box-sizing: border-box;
   flex-direction: column;
-  background-color: #4975c78e;
+  background-color: #f0f1f380;
   margin-left: 0;
-  border-right: thick solid rgba(0, 0, 0, 0.151);
-  width: 25vw;
+  width: 20%;
+  border-right: thin solid black;
 }
 
 .crypto_search_btn{
@@ -74,17 +82,23 @@
   height: 4vh;
 }
 
+.crypto_search_btn:hover{
+  background-color: #05273694;
+}
+
 .home_navbar_btns{
   box-sizing: border-box;
-  height: 56px;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  height: 6vh;
+  margin-top: 28px;
   border: none;
   align-items: stretch;
   box-sizing: border-box;
   list-style-position:inside;
-  box-shadow: 1px 1px 10px #4745453a;
   background-color: #fcfcfc8f;
+  font-size: x-large;
+  font-weight: bolder;
+  /* border-bottom: solid thin #d4d4d48f; */
+  border-bottom: solid thin black;
 }
 
 .home_navbar_items{
@@ -99,8 +113,13 @@
   border: none;
 }
 
+.home_navbar_btns:hover{
+  border-left: 10px solid #159AD6;
+  box-shadow: 1px 1px 10px #4745453a;
+}
+
 .home_navbar_btns:focus{
-    border-left: 10px solid #159AD6
+    border-left: 10px solid #159AD6;
 }
 
 .coin_icon{

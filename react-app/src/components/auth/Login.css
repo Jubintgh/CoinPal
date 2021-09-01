@@ -1,8 +1,3 @@
-form div{
-    width: 20vw;
-
-}
-
 .form-container{
     display: flex;
     justify-content: center;
@@ -34,6 +29,8 @@ input {
     width: 25vw;
     border-radius: 5px;
     border-style: none;
+    font-size: larger;
+    font-weight: bolder;
 }
 
 .signup_btn{
@@ -43,6 +40,8 @@ input {
     width: 25vw;
     border-radius: 5px;
     border-style: none;
+    font-size: larger;
+    font-weight: bolder;
 }
 
 .signup_btn:hover{
@@ -59,9 +58,10 @@ input {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 10vh 40vh 40vh;
+    margin: 8%;
+    padding-bottom: 20%;
     width: 45vw;
-    height: 60vh;
+    height: 100%;
     border-radius: 5px;
 }
 
@@ -75,6 +75,8 @@ input {
 .login_label{
     color: white;
     margin: 10px;
+    font-size: larger;
+    font-weight: bolder;
 }
 
 .login_input{

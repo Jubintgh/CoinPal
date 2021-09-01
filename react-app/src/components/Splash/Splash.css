@@ -1,10 +1,12 @@
 .splash-page{
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     margin-top: 10vh;
-    margin-left: 12vw;
     justify-content: center;
     position: relative;
-    width: 80%;
+    width: 100%;
 }
 
 .left_column{

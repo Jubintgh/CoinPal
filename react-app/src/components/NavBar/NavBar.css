@@ -32,7 +32,7 @@ nav {
     justify-content: space-evenly;
     align-items: center;
     height: 10vh;
-    width: 100%;
+    width: 100vw;
     font-size: 1.4vw;
     background-image: linear-gradient(to right, #169bd7 , #0B67B4);
 }
@@ -101,30 +101,27 @@ nav {
 }
 
 .navbar__link{ 
-    width: 25%;
+    width: 60%;
     margin-top: 50px;
     position: absolute;
     display: flex;
     flex-direction: row;
-    /* justify-content: flex-start; */
     transition: 500ms;
     font-size: 80%;
-    /* font-weight: 300; */
     animation: ease-in-out;   
     color: #fff;
     text-decoration: none;
     cursor: pointer;
-    /* line-height: 70px; */
     align-self: flex-start;
     margin-left: 10%;
     justify-content: space-around;
-    /* margin-left: 2%; */
 }
 
 .navbar__link a{
     border-radius: 20px;
     font-weight: 500;
     color: white;
+    margin-right: 5%;
 }
 
 .navbar__link a:hover {
@@ -152,20 +149,47 @@ nav {
     border-radius: 90px;
 }
 
-.navbar__logout_button button{
+.navbar__logout_button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     outline: none;
-    margin-left: 20%;
+    margin: 2%;
+    width: 10%;
+    height: inherit;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar__logout_button button{
+    margin-top: 15px;
     color: #ffffff;
-    font-size: 1rem;
-    font-weight: 600;
     border: none;
     background: none;
     cursor: pointer;
-    justify-self: flex-end;
-    align-self: flex-end;
 }
 
+.navbar__logout_button button :hover{
+    color: #0a0a0a77;
+}
 
+.navbar__logout{
+    font-size: 1rem;
+    font-weight: 600;
+    align-self: center;
+    justify-self: center;
+}
+
+.logged_in_profile{
+    height: 3vw;
+    width: 3vw;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 80px;
+    justify-self: center;
+    align-self: center;
+}
 
 .navbar__button button:hover {
     border: solid thin #f3f3f362;

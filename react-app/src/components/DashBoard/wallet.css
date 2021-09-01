@@ -3,7 +3,6 @@
 .wallet-page {
     display: flex;
     box-sizing: border-box;
-    border-radius: 10px;
     height: 90vh;
 }
 
@@ -13,7 +12,7 @@
     flex-direction: column;
     justify-content: space-between;
     background-color: #F4F7FA;
-    width: 25vw;
+    width: auto;
     height: auto;
 }
 
@@ -33,20 +32,22 @@
     justify-content: center;
     align-items: center;
     padding: 0vw;
+    width: 100%;
 }
 
 .wallet_leftbar--coinholder > .wallet_leftbar--coinselector{
     box-sizing: border-box;
-    height: 76px;
-    width: auto;
+    height: 5.5vw;
     margin: 10px;
     margin-left: 34px;
     border: #020202;
     align-items: stretch;
     box-sizing: border-box;
     list-style-position:inside;
-
+    width: 115%;
+    margin-left: 50px;
     box-shadow: 1px 1px 10px #4745453a;
+    z-index: 3;
 }
 
 .wallet_leftbar--coinholder > .wallet_leftbar--coinselector:hover{
@@ -71,7 +72,7 @@
 /* balance and information side */
 .wallet-rightbar{
     display: flex;
-    width: 100%;
+    width: 90%;
     position: relative;
     background-color: #f4f7fa;
     justify-content: center;
@@ -103,7 +104,7 @@
     text-align: center;
     box-sizing: border-box;
     /* align-self: center; */
-    height: 5vh;
+    height: 100%;
     width: auto;
     justify-self: center;
     /* margin-top: 10vw; */

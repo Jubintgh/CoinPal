@@ -40,7 +40,7 @@ const LoginForm = () => {
 
   return (
     <form className="login_page" onSubmit={onLogin}>
-      <h1 className='Title_text'>Welcome to CoinPal</h1>
+      <h1 className='Title_text'>Login</h1>
       <div className='errors__class'>
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>

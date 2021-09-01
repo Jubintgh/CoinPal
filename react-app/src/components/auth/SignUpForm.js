@@ -61,14 +61,14 @@ const SignUpForm = () => {
   }
 
   return (
-    // <div className='form-container'>
     <form className={'signup-page  signup_info_container'} onSubmit={onSignUp}>
       <div className="errors__class">
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
       </div>
-      <div>
+      <div className='signup_container'>
+      <div className='signup_field'>
         <label className='signup_input'>User Name</label>
         <input
           type='text'
@@ -77,7 +77,7 @@ const SignUpForm = () => {
           value={username}
         ></input>
       </div>
-      <div>
+      <div className='signup_field'>
         <label className='signup_input'>Email</label>
         <input
           type='text'
@@ -87,7 +87,7 @@ const SignUpForm = () => {
           required={true}
         ></input>
       </div>
-      <div>
+      <div className='signup_field'>
         <label className='signup_input'>First Name</label>
         <input
           type='text'
@@ -97,7 +97,7 @@ const SignUpForm = () => {
           required={true}
         ></input>
       </div>
-      <div>
+      <div className='signup_field'>
         <label className='signup_input'>Last Name</label>
         <input
           type='text'
@@ -107,7 +107,7 @@ const SignUpForm = () => {
           required={true}
         ></input>
       </div>
-      <div>
+      <div className='signup_field'>
         <label className='signup_input'>Profile picture URL</label>
         <input
           type='text'
@@ -117,7 +117,7 @@ const SignUpForm = () => {
           required={true}
         ></input>
       </div>
-      <div>
+      <div className='signup_field'>
         <label className='signup_input'>Password</label>
         <input
           type='password'
@@ -127,7 +127,7 @@ const SignUpForm = () => {
           required={true}
         ></input>
       </div>
-      <div>
+      <div className='signup_field'>
         <label className='signup_input'>Repeat Password</label>
         <input
           type='password'
@@ -138,8 +138,8 @@ const SignUpForm = () => {
         ></input>
       </div>
       <button className={'signup-btn'} type='submit'>Sign Up</button>
+    </div>
     </form>
-    // </div>
   );
 };
 
