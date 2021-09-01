@@ -22,12 +22,14 @@
 .splash-page{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     /* justify-content: center;
     align-items: center; */
     margin-top: 10vh;
     /* justify-content: center; */
     position: relative;
-    width: 100%;
+    width: 100vw;
 }
 
 .left_column{

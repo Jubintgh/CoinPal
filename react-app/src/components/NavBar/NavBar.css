@@ -69,7 +69,7 @@ nav {
     min-width: 15px;
     min-height: 10px;
     border-radius: 150vw;
-    margin: 5vw;
+    margin: 2vw;
 }
 
 
@@ -141,14 +141,14 @@ nav {
     font-size: 1.1rem;
     font-weight: 600;
     width: 140px;
-    height: 25px;
+    height: 50px;
     border: none;
-    background: rgba(19,157,215);
-    box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.527);
+    background: rgba(19, 156, 215, 0.753);
+    box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.295);
     cursor: pointer;
-    margin-right: 22px;
     justify-self: flex-end;
     border-radius: 90px;
+    margin-right: 42px;
 }
 
 .navbar__logout_button{
