@@ -105,8 +105,8 @@ const Activity = () => {
     return(
       <div className='parent_page'>
         <div id='activity__navbar'>
-          <h5>Search transactions:</h5>
-          <input style={{display: (switcher === 'block' ? 'none' : 'block')}} className='transaction__search_container' placeholder='search transactions...'></input>
+          <h5>All Transactions</h5>
+          {/* <input style={{display: (switcher === 'block' ? 'none' : 'block')}} className='transaction__search_container' placeholder='search transactions...'></input> */}
           <button style={{display: switcher}} onClick={() => refreshPage()} className='activity_nav_button'>Back to all transactions</button>
         </div>
         <div className='Activity_page'>
