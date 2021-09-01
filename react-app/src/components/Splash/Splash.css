@@ -1,10 +1,31 @@
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+}
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+
+}
+
 .splash-page{
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
     margin-top: 10vh;
-    justify-content: center;
+    /* justify-content: center; */
     position: relative;
     width: 100%;
 }
@@ -29,18 +50,21 @@ picture{
 }
 
 picture > img{
-    height: 45vh;
-    width: 40vh;
-    padding: 5vw;
+    height: 45%;
+    width: 40%;
+    padding: 5%;
 }
 
 picture > p{
     font-weight: 0;
     /* margin-top: 10vh; */
     width: 30vw;
+    height: auto;
     font-size: larger;
     margin-left: 5vw;
     margin-right: 8vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
     text-align: center;
 }
 
@@ -57,14 +81,14 @@ picture > p{
 }
 
 .top_pic{
-    height: 90%;
+    height: 80%;
     border-radius: 10px;
     margin: 10px 15px;
     box-shadow: 5px 5px 10px gray;
 }
 
 .buttom_pic{
-    height: 8vh;
+    height: 16%;
     width: auto;
     margin-right: 100px;
     animation: notification 200ms infinite;

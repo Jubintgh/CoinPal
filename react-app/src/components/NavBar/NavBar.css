@@ -47,7 +47,6 @@ nav {
     float: right;
     width: 100%;
     align-items: center;
-    /* justify-content: center */
     margin-top: 0;
     margin-bottom: 0;
     height: inherit;
@@ -101,20 +100,23 @@ nav {
 }
 
 .navbar__link{ 
-    width: 60%;
-    margin-top: 50px;
+    width: 20%;
+    /* margin-top: 50px; */
     position: absolute;
     display: flex;
     flex-direction: row;
     transition: 500ms;
-    font-size: 80%;
+    font-size: 70%;
     animation: ease-in-out;   
     color: #fff;
     text-decoration: none;
     cursor: pointer;
-    align-self: flex-start;
-    margin-left: 10%;
-    justify-content: space-around;
+    align-self: center;
+    margin-left: 60px;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
 }
 
 .navbar__link a{
@@ -138,8 +140,8 @@ nav {
     color: #ffffff;
     font-size: 1.1rem;
     font-weight: 600;
-    width: 240px;
-    height: 50px;
+    width: 140px;
+    height: 25px;
     border: none;
     background: rgba(19,157,215);
     box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.527);
