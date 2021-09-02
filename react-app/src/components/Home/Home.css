@@ -58,6 +58,7 @@
 
 .home_page{
   display: flex;
+  position: relative;
   box-sizing: border-box;
   /* border-radius: 10px; */
   height: 100%;
@@ -73,7 +74,6 @@
   margin-left: 0;
   width: 20%;
   border-right: thin solid black;
-  z-index: 1;
 }
 
 .crypto_search_btn{
@@ -109,21 +109,19 @@
 }
 
 .home_navbar_items_holder{
-  display: inline-block;
-  margin-left: 9vw;
+  position: relative;
   min-width: 10px;
-  z-index: 1;
 }
 
 .home_navbar_items{
   display: flex;
+  float: left;
   flex-direction: row;
   justify-content: space-between;
   box-sizing: border-box;
   padding: 20px;
+  margin: auto;
   margin: 5px 1px 1px;
-  /* background-color: #F4F7FA; */
-  /* background-color:red; */
   list-style-type: none;
   border: none;
 }

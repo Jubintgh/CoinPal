@@ -27,8 +27,8 @@ const MyWallet = () => {
 
             <div className="wallet-leftbar">
                 <ul className="wallet_leftbar--coinholder">
-                    <h3 id='side_bar_title'>Your wallet</h3>
                     <input className="wallet_leftbar--logo" type="image" alt="wallet_logo" src="https://user-images.githubusercontent.com/73211975/128096175-c7a6480a-8aec-45d8-bb2c-357c1f509976.png" value='Bitcoin'/>
+                    <h3 id='side_bar_title'>Your wallet</h3>
                     <input className="wallet_leftbar--coinselector" type="image" alt="Bitcoin_logo" src="https://user-images.githubusercontent.com/73211975/127550815-431bd4d7-d17f-4740-8b83-2e0b07092dbe.png" value='Bitcoin' onClick={e => setCurrCoin({
                         "coin": e.target.value,
                         "logo": "https://user-images.githubusercontent.com/73211975/128097437-7c56579c-79a4-4d41-b699-bcd8c093cb3e.png"

@@ -1,3 +1,4 @@
+
 .transaction__form{
     display: flex;
     flex-direction: column;
@@ -80,7 +81,9 @@
     background-color: #b1dff565;
     margin-top: 1vw;
     margin-bottom: 0%;
-    height: 5vh;
+    height: 40px;
+    max-width: 550px;
+    min-width: 95px;
 }
 
 .fund__input:hover{
@@ -93,4 +96,5 @@
 
 .fund__field{
     margin: 1em;
+    height: 40px;
 }
