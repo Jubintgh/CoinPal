@@ -1,7 +1,7 @@
 const CoinsData = ({allCoins}) => {
     
     return(
-        <ul>
+        <ul className='home_navbar_items_holder'>
             {allCoins && Object.keys(allCoins).map(coin => {
                     return(
                         <li key={coin} className='home_navbar_items'>

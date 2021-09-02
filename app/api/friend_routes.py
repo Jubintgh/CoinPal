@@ -110,7 +110,7 @@ def post_friend_req(is_accept=False):
 @login_required
 def update_friendship(filter_t):
     """
-    updates an existing friendship status
+    updates an existing friendship record
     """
 
     if filter_t == 'accept':

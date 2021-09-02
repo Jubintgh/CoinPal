@@ -1,3 +1,9 @@
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px){
+  * {
+    width: 100%;
+  }
+}
+
 .main_bar{
   display: flex;
   position: relative;
@@ -67,6 +73,7 @@
   margin-left: 0;
   width: 20%;
   border-right: thin solid black;
+  z-index: 1;
 }
 
 .crypto_search_btn{
@@ -101,6 +108,13 @@
   border-bottom: solid thin black;
 }
 
+.home_navbar_items_holder{
+  display: inline-block;
+  margin-left: 9vw;
+  min-width: 10px;
+  z-index: 1;
+}
+
 .home_navbar_items{
   display: flex;
   flex-direction: row;
@@ -108,7 +122,8 @@
   box-sizing: border-box;
   padding: 20px;
   margin: 5px 1px 1px;
-  background-color: #F4F7FA;
+  /* background-color: #F4F7FA; */
+  /* background-color:red; */
   list-style-type: none;
   border: none;
 }
@@ -200,6 +215,7 @@ canvas{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: -2;
   }
 
   .lds-ellipsis {
