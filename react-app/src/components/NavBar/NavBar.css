@@ -112,6 +112,10 @@ nav {
     transform: scaleX(1);
 }
 
+.navbar__button{
+    width: 20%;
+}
+
 .navbar__button button {
     outline: none;
     color: #ffffff;
@@ -125,7 +129,7 @@ nav {
     cursor: pointer;
     justify-self: flex-end;
     border-radius: 90px;
-    margin-left: 5%;
+    margin-right: 1%;
 }
 
 .navbar__logout_button{
