@@ -245,6 +245,8 @@ canvas{
     justify-self: flex-end;
     align-items: flex-end;
     margin-left: 70%;
+    font-weight: bolder;
+    width: 10%;
   }
 
   .search_name_home{
