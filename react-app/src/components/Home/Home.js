@@ -100,11 +100,17 @@ const Home = () => {
             <div className='main_bar'>
                 {
                     <>
-                        {(display === 1) ? <input className='crypto_search_bar' onChange={e => setSearchCoinTerm(e.target.value)} placeholder='Look up crypto...'/>: <></>}
+                        {(display === 1) ? <div className='search_bar_home'><input className='crypto_search_bar' onChange={e => setSearchCoinTerm(e.target.value)} placeholder='Look up crypto... and click on search!'/>
+                        <button className='crypto_search_btn' onClick={e => lookUpCoin(e.target.value)}>Search</button>
+                        </div>: <></>}
                         {suggestedCoins && suggestedCoins.map(coin => (
-                            <li onClick={e => setSearchCoin(coin)} key={coin.symbol} className='search_result'><img id='seach_profile_pic' src={coin.iconUrl} alt='profile_pic'/>{coin.name}</li>
+                            <li onClick={e => setSearchCoin(coin)} key={coin.symbol} className='search_result_home'>
+                                <img id='seach_profile_pic' src={coin.iconUrl} alt='profile_pic'/>
+                                <p className='search_name_home'>{coin.name}</p>
+                                <h5 className='more-info'>Click for more info</h5>
+                            </li>
                         ))}
-                        {(display === 1) ?<button className='crypto_search_btn' onClick={e => lookUpCoin(e.target.value)}>Search</button>: <></>}
+                        {/* {(display === 1) ?<button className='crypto_search_btn' onClick={e => lookUpCoin(e.target.value)}>Search</button>: <></>} */}
                     </>
                 }
                 {

@@ -21,9 +21,10 @@
 }
 
 .crypto_search_bar{
-  border: thick solid black;
+  border: thin solid black;
   width: 80%;
-  margin: 5vh;
+  height: 25%;
+  /* margin-left: 12%; */
 }
 
 #side_bar_logo{
@@ -72,25 +73,28 @@
   flex-direction: column;
   background-color: #f0f1f380;
   margin-left: 0;
-  width: 20%;
-  border-right: thin solid black;
+  width: 25%;
+  box-shadow: 10px 10px 20px rgba(63, 63, 63, 0.473);
+  /* box-shadow: thin solid rgb(129, 129, 129); */
 }
 
 .crypto_search_btn{
-  background-color: #169bd7;
+  background-color: #34a3d6;
+  box-shadow: 5px 5px 15px rgba(19, 148, 223, 0.527);
   border: none;
   cursor:pointer;
-  margin: 5px;
-  font-weight: bold;
+  margin: 2% 2% 2% 0.5%;
+  font-weight: bolder;
   border-radius: 2px;
   padding: 1px;
   /* width: 10vw; */
-  width: 46%;
+  width: 26%;
   height: 4vh;
+  border-radius: 5px;
 }
 
 .crypto_search_btn:hover{
-  background-color: #05273694;
+  background-color: #8adcff94;
 }
 
 .home_navbar_btns{
@@ -104,13 +108,15 @@
   background-color: #fcfcfc8f;
   font-size: x-large;
   font-weight: bolder;
-  /* border-bottom: solid thin #d4d4d48f; */
-  border-bottom: solid thin black;
+  box-shadow: 5px 10px 10px 10px rgba(157, 158, 158, 0.39);
+  border-radius: 5px;
 }
 
 .home_navbar_items_holder{
   position: relative;
+  width: 100%;
   min-width: 10px;
+  margin: 2%;
 }
 
 .home_navbar_items{
@@ -124,6 +130,7 @@
   margin: 5px 1px 1px;
   list-style-type: none;
   border: none;
+  width: 100%;
 }
 
 .home_navbar_btns:hover{
@@ -205,6 +212,43 @@ canvas{
     border-radius: 50px;
     margin: 25px;
     padding: 10px;
+  }
+
+  .search_bar_home{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+    margin: 6%;
+  }
+
+  .search_result_home{
+    display: flex;
+    justify-content: flex-start;
+    align-items: space-between;
+    /* justify-self: center; */
+    /* align-self: center; */
+    border-style: none;
+    list-style-type: none;
+    margin: 5px 0px 0px 0px;
+    width: 80%;
+    background-color: rgba(5, 144, 214, 0.493);
+    border-radius: 15px;
+  }
+
+  .search_result_home :hover{
+    cursor: pointer;
+    /* background-color: yellow; */
+  }
+
+  .more-info{
+    justify-self: flex-end;
+    align-items: flex-end;
+    margin-left: 70%;
+  }
+
+  .search_name_home{
+    width: 20%;
   }
 
   /* Loader */

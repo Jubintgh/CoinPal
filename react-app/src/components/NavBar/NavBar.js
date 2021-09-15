@@ -20,7 +20,7 @@ const NavBar = () => {
             Login
           </NavLink>
           <NavLink to='/sign-up' exact={true} activeClassName='active'>
-            Sign Up
+            SignUp
           </NavLink>
         </li>
         <li className="navbar__button">
@@ -48,7 +48,9 @@ const NavBar = () => {
               Wallet
             </NavLink>
             <NavLink to={`/my/SendNrequest`} exact={true} activeClassName='active'>
-              Send and Request
+              Send
+              & 
+              Request
             </NavLink>
           </li>
           <li className="navbar__logout_button">
