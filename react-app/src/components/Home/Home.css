@@ -242,11 +242,15 @@ canvas{
   }
 
   .more-info{
-    justify-self: flex-end;
-    align-items: flex-end;
-    margin-left: 70%;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    margin-left: 65%;
     font-weight: bolder;
     width: 10%;
+    background-color: #fffd7567;
+    border-radius: 15px;
+    padding-left: 1px;
   }
 
   .search_name_home{

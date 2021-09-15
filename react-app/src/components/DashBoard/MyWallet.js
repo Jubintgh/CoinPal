@@ -47,7 +47,8 @@ const MyWallet = () => {
             <div className="wallet-rightbar">
                 <div className="currentstats">
                     <img alt="logo" className="currcoin__logo" src={currCoin["logo"]}/>
-                    <div className="currcoin__balance">balance
+                    <div className="currcoin__balance">
+                        <h4 className='amount'>Balance</h4>
                         <p className='amount'>{currCoin.coin === 'Bitcoin' ? bitcoinBalance + ' BitCoin available' : currCoin.coin === 'Ethereum' ? ethereumBalance + ' ETH available' : currCoin.coin === 'USD-Coin' ? usdCoinBalance + ' USD-Coin available' : currCoin === 'Loading...'}</p>
                         <p className='extras'>
                         CoinPal works with a balance
