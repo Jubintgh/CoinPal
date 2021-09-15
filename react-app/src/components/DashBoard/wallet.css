@@ -120,7 +120,8 @@
     padding: 10px;
     font-weight: 2;
     margin-bottom: 4vh;
-    font-size: bolder;
+    font-size: larger;
+    font-weight: bolder;
 }
 
 .extras{

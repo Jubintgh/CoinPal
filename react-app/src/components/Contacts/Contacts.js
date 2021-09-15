@@ -78,7 +78,7 @@ const MyContacts = () => {
             </div>
 
             <div className='contacts_container'>
-            <h5 className='title'>Contacts</h5>
+            <div className='title_holder'><h5 className='title'>Contacts</h5></div>
             {
               friendsList && friendsList.map((friend, idx) => {
                 return (
