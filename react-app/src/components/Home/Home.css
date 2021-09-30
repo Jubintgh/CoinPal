@@ -101,14 +101,16 @@
   box-sizing: border-box;
   height: 6vh;
   margin-top: 28px;
+  margin-right: 2%;
+  margin-left: 2%;
   border: none;
   align-items: stretch;
   box-sizing: border-box;
   list-style-position:inside;
-  background-color: #fcfcfc8f;
+  background-color: #ffffff;
   font-size: x-large;
   font-weight: bolder;
-  box-shadow: 5px 10px 10px 10px rgba(157, 158, 158, 0.39);
+  box-shadow: 5px 10px 20px 2px rgba(18, 19, 19, 0.39);
   border-radius: 5px;
 }
 
