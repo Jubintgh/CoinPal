@@ -3,7 +3,6 @@ import { IconContext } from 'react-icons';
 import { FaLinkedin, FaAngellist, FaGithub } from 'react-icons/fa';
 import { MdWeb } from 'react-icons/md';
 import './Footer.css';
-// import AK from '../../public/'
 
 const Footer = () => {
   return (
@@ -16,6 +15,13 @@ const Footer = () => {
           <div className='footer-content-row-1'>
             <div className='footer-col-link'>
               <a href={'https://github.com/Jubintgh/CoinPal_clone'}>About</a>
+            <a
+              rel="noreferrer"
+              href='https://www.linkedin.com/in/jubintaghdir/'
+              target='_blank'
+              >
+              <FaLinkedin />
+            </a>
             </div>
             <div className='footer-col-link'>
               <a href={'https://github.com/Jubintgh?tab=repositories'}>Other Projects</a>
@@ -24,7 +30,7 @@ const Footer = () => {
               <a href={'https://github.com/Jubintgh/CoinPal_clone'}>Resume</a>
             </div>
             <div className='footer-col-link'>
-              <a href={'https://github.com/Jubintgh/CoinPal_clone'}>Contact</a>
+              {/* <a href={'https://github.com/Jubintgh/CoinPal_clone'}>Contact</a> */}
             </div>
             <div className='footer-col-row1'>
               <img alt="jubinPic" className='footer-profilePic' src='https://avatars.githubusercontent.com/u/73211975?v=4' />
@@ -39,13 +45,7 @@ const Footer = () => {
                 <a rel="noreferrer" href='https://github.com/Jubintghr' target='_blank'>
                   <MdWeb />
                 </a>
-                <a
-                  rel="noreferrer"
-                  href='https://www.linkedin.com/in/jubintaghdir/'
-                  target='_blank'
-                >
-                  <FaLinkedin />
-                </a>
+
               </div>
             </div>
           </div>
