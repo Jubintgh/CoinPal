@@ -164,6 +164,7 @@ a {
     color: rgba(255, 255, 255, 0);
 }
 
+
 /* arrows   */
 .arrow {
     border: solid black;
@@ -275,7 +276,19 @@ a {
 }
 
 .search__input{
-    width: 70vw;
-    height: 7px;
+    width: 90%;
+    height: auto;
     border: thin solid black;
+    justify-self: flex-end;
+    align-self: center;
+}
+
+
+.search__bar_items{
+    margin-bottom: 0%;
+    margin-left: 0%;
+}
+
+.search__bar_items:hover{
+    background-color: #bbe9ff3b;
 }

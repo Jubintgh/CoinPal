@@ -59,7 +59,7 @@ const MyWallet = () => {
       }
     }
   }
-
+  
   const searchQuery = async function(username) {
     if(username && username[0] === '@'){
       username = username.slice(1)
@@ -122,6 +122,6 @@ const MyWallet = () => {
   );
 }
   
-  
+
 export default MyWallet;
   

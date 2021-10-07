@@ -35,7 +35,7 @@ function UsersList() {
 
   return (
     <>
-      <h1> List of all Users for demo purposes: </h1>
+      <h1 style={{"font-weight": "bolder", "margin": "2%"}}> List of all currently existing Users for demo/ testing purposes: </h1>
       <ul>{userComponents}</ul>
     </>
   );

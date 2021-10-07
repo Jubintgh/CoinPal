@@ -1,6 +1,6 @@
 import './Contacts.css'
 import { useSelector, useDispatch } from 'react-redux';
-// import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getAllFriends, updateOneFriendship,removeFriend} from '../../store/friend';
 import {getOneUser} from '../../store/users'
@@ -16,7 +16,7 @@ const MyContacts = () => {
 
     const id = Number(user.id);
 
-    // const history = useHistory();
+    const history = useHistory();
     const dispatch = useDispatch();
     
     //useEffets
@@ -27,8 +27,23 @@ const MyContacts = () => {
     //useStates
     const [ReqDisplay, setReqDisplay] = useState(false)
     const [SearchDisplay, setSearchDisplay] = useState(false)
+    const [userSearchQuery, setUserSearchQuery] = useState([])
 
+    //search for users
+    const searchQuery = async function(username) {
+        if(username && username[0] === '@'){
+            username = username.slice(1)
+        }
+    
+        const res = await fetch(`/api/users/search?user=${username}`);
+            if(res.ok){
+                const response = await res.json();
+                setUserSearchQuery(response.users.slice(0,5))
+            }
+        return username
+    }
 
+    //Friend feature actions
     const unFriend = async (otherUserId) => {
         await dispatch(removeFriend(otherUserId))
         dispatch(getAllFriends(id))
@@ -73,15 +88,20 @@ const MyContacts = () => {
                         )
                     })
                 }{<div>No More Requests</div>}
-                </div>}  
-                {/* {
-                    SearchDisplay && <div className='search__bar'>
-                        Search Users: <input className='search__input' onClick={e => searchUser(e.target.value)}/> <button>search</button> 
-                    </div>
-                } */}
+                </div>}
             </div>
 
             <div className='contacts_container'>
+            {
+                <input className='search__input' placeholder="Look up users by user name" onChange={e => searchQuery(e.target.value)}/>
+            }
+            <ul>
+                {userSearchQuery && userSearchQuery.map((user, idx) => (
+                (<li onClick={e => history.push(`/users/${user.username}`)} className='req_profile__container search__bar_items' key={idx}><img id='seach_profile_pic' src={user.img} alt='profile_pic'/>{user.username}</li>)
+                ))}
+            </ul>
+            
+            
             <div className='title_holder'><h5 className='title'>My Contacts</h5></div>
             {
               friendsList && friendsList.map((friend, idx) => {
