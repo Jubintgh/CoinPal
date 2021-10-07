@@ -53,15 +53,16 @@
 /* users page */
 
 #users_page{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  /* margin: 2%; */
 }
 
 .single_user{
     justify-content: flex-start;
-    list-style-type:none;
+    list-style-type: none;
 }
 
 .user_holder{

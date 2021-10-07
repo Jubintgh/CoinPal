@@ -6,6 +6,7 @@ import { getAllFriends, updateOneFriendship,removeFriend} from '../../store/frie
 import {getOneUser} from '../../store/users'
 import { Redirect } from 'react-router';
 
+
 const MyContacts = () => {
     const { user } = useSelector((state) => state.session);
 
@@ -46,7 +47,10 @@ const MyContacts = () => {
     return (
         <div id='contacts_page'>
             <div id='contact__navbar'>
-                <button onClick={e => setReqDisplay(!ReqDisplay)} className='friend_req_button'>Friend Requests <span class={friendReqList.length ? "badge" : "notbadge"}>{friendReqList.length}</span></button>
+                <button onClick={e => setReqDisplay(!ReqDisplay)} className='friend_req_button'>
+                    <span class={friendReqList.length ? "badge" : "notbadge"}>{friendReqList.length}</span>
+                    <p><p>Friend Requests</p><i class={ ReqDisplay ? "arrow up" : "arrow down"}></i></p>
+                </button>
             </div>
             <div className='req_contacts_container'>
             {

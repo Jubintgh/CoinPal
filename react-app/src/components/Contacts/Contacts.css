@@ -54,16 +54,15 @@ a {
     margin: 5vh;
 }
 
-.req_contacts_container{
+/* .req_contacts_container{
     display: flex;
     flex-direction: column;
     position: relative;
     background-color: white;
     border-radius: 5px;
     box-sizing: border-box;
-    margin-right: 20vw;
     margin-bottom: 5vh;
-}
+} */
 
 
 
@@ -131,7 +130,7 @@ a {
     background-color: Transparent;
     font-size: bold;
     border: thin solid rgba(128, 128, 128, 0.432);
-    background-color: #cef0ff;
+    background-color: #edf6fa;
     cursor:pointer;
     align-self: center;
     margin-left: 10vw;
@@ -151,6 +150,10 @@ a {
     color: white;
 }
 
+.friend_req_button :focus{
+    background-color: #f5ada4;
+}
+
 .friend_req_button .notbadge {
     position: absolute;
     top: -18px;
@@ -161,6 +164,25 @@ a {
     color: rgba(255, 255, 255, 0);
 }
 
+/* arrows   */
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+  
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+/*arrows*/
+
 .contact_request_container{
     display: flex;
     align-self: flex-start;
@@ -169,6 +191,10 @@ a {
     justify-items: center;
 }
 
+.arrow-holder{
+    display: flex;
+    flex-direction: row;
+}
 
 
 .req_contacts_container {
@@ -178,7 +204,8 @@ a {
     background-color: rgb(255, 255, 255);
     box-shadow: 1px 15px 20px gray;
     box-sizing: border-box;
-    align-self: center;
+    align-self: flex-start;
+    margin-left: 5%;
     border-bottom: thin solid gray;
 }
 
@@ -195,8 +222,8 @@ a {
 .req_signle_contact{
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
     width: inherit;
-    border-bottom: thin solid rgba(128, 128, 128, 0.089);
 }
 
 #req_profile_pic {
