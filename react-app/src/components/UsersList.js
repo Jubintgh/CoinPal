@@ -18,7 +18,6 @@ function UsersList() {
   const userComponents = users.map((user) => {
     return (
       <div id='users_page'>
-        {console.log(users)}
         <li key={user.id} className='single_user'>
             <NavLink className='profile__container' to={`/users/${user.username}`}>
               <div className='req_signle_contact'>

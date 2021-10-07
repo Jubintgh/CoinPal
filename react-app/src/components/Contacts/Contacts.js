@@ -83,7 +83,6 @@ const MyContacts = () => {
               friendsList && friendsList.map((friend, idx) => {
                 return (
                     <div className='profile__container' key={idx}>
-
                         <div className='signle_contact'>
                             <img id='profile_pic' src={friend.profile_img} onError={(e) => {e.target.src = 'https://unwomen.org.au/wp-content/uploads/2020/09/Avitar_Image_Placeholder-1.png'}} alt="profile_pic" className=""/>
                                 <div className='name_username_container'>
@@ -95,6 +94,9 @@ const MyContacts = () => {
                     </div>
                 )
               })
+            }
+            {
+                !friendsList.length ? <div className='signle_contact'> You don't have any friends yet </div> : null
             }
             </div>
         </div>

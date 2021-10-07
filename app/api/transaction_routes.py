@@ -67,8 +67,6 @@ def get_transactions(id):
 
     transactions_all = transactions_debit + transactions_credit
 
-    print(transactions_all[0].created_at, 'TEST')
-
     sorted_transactions = sorted(transactions_all, 
     key=lambda x: datetime.strptime(str(x.created_at), "%Y-%m-%d %H:%M:%S.%f"))
     sorted_transactions.reverse()

@@ -33,7 +33,6 @@ def search_users():
 @login_required
 def user(username):
     user = User.query.filter(User.username == username).first()
-    print(user.username, "USERNAMEE")
     return user.to_dict()
 
 @user_routes.route('/<int:id>', methods=['PUT'])
