@@ -17,7 +17,7 @@ const Home = () => {
     const [display, setDisplay] = useState(1)
     const [errors, setErrors] = useState([]);
     const [suggestedCoins, setSuggestedCoins] = useState([])
-    const [searchTerm, setSearchCoinTerm] = useState('')
+    // const [searchTerm, setSearchCoinTerm] = useState('')
     const [singleCoin, setSingleCoin] = useState('')
 
     const dispatch = useDispatch();
@@ -57,7 +57,14 @@ const Home = () => {
         waitRes()
     }, [dispatch, display])
 
-    const lookUpCoin = async() => {
+    const lookUpCoin = async(searchTerm) => {
+        setSuggestedCoins([{
+        iconUrl: 'https://ps.w.org/custom-search-plugin/assets/icon-256x256.gif?rev=2617097',
+        name: 'searching...',
+        symbol: 'searching'
+    }])
+    console.log(searchTerm)
+    setTimeout(async() => {
         const res = await fetch(`/api/markets/search?crypto=${searchTerm}`,{
             headers: {
                 'Content-Type': 'application/json'
@@ -65,8 +72,18 @@ const Home = () => {
         });
         if(res.ok){
             const query = await res.json();
-            setSuggestedCoins(query.allMarkets.data.coins.splice(0,3))
+            console.log(query)
+            if (query.allMarkets.code === "RATE_LIMIT_EXCEEDED") setSuggestedCoins([{
+                iconUrl: 'https://i.pinimg.com/originals/4b/2d/92/4b2d92c479765803893c07024d2566d2.gif',
+                name: 'No coins found',
+                symbol: 'searching'
+            }])
+            else if(query.allMarkets.data.coins) setSuggestedCoins(query.allMarkets.data.coins.splice(0,3))
+            else setSuggestedCoins(['no coin with that name'])
+        } else {
+            setSuggestedCoins(['no coin with that name'])
         }
+    }, 4000)
     }
 
     const setSearchCoin = (coin) => {
@@ -100,14 +117,21 @@ const Home = () => {
             <div className='main_bar'>
                 {
                     <>
-                        {(display === 1) ? <div className='search_bar_home'><input className='crypto_search_bar' onChange={e => setSearchCoinTerm(e.target.value)} placeholder='Look up crypto... and click on search!'/>
+                        {/* onChange={e => setSearchCoinTerm(e.target.value) */}
+                        {(display === 1) ? <div className='search_bar_home'><input className='crypto_search_bar' onChange={e => lookUpCoin(e.target.value)} onKeyDown={e=> setSuggestedCoins([])} placeholder='Look up crypto by name!'/>
                         <button className='crypto_search_btn' onClick={e => lookUpCoin(e.target.value)}>Search</button>
                         </div>: <></>}
                         {suggestedCoins && suggestedCoins.map(coin => (
+                           coin.symbol === "searching" ?
+                                    <p id='coin-searching'>
+                                    <img id='seach_profile_pic' src={coin.iconUrl} alt='profile_pic'/>
+                                    {coin.name}
+                                    </p>
+                            :
                             <li onClick={e => setSearchCoin(coin)} key={coin.symbol} className='search_result_home'>
                                 <img id='seach_profile_pic' src={coin.iconUrl} alt='profile_pic'/>
                                 <p className='search_name_home'>{coin.name}</p>
-                                <h5 className='more-info'>Click for more info</h5>
+                                <h5 className='more-info'> Click here!</h5>
                             </li>
                         ))}
                         {/* {(display === 1) ?<button className='crypto_search_btn' onClick={e => lookUpCoin(e.target.value)}>Search</button>: <></>} */}

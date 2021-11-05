@@ -240,19 +240,30 @@ canvas{
 
   .search_result_home :hover{
     cursor: pointer;
-    /* background-color: yellow; */
+    box-shadow: 2px 2px 2px rgb(94, 93, 93);
+  }
+
+  #coin-searching{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #coin-searching-icon{
+    height: 10%;
+    width: auto;
   }
 
   .more-info{
     display: flex;
-    justify-self: center;
+    justify-content: center;
     align-items: center;
     margin-left: 65%;
     font-weight: bolder;
     width: 10%;
     background-color: #fffd7567;
+    background-color: rgb(252, 124, 124);
     border-radius: 15px;
-    padding-left: 1px;
   }
 
   .search_name_home{
