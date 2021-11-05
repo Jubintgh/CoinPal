@@ -17,7 +17,7 @@ const Home = () => {
     const [display, setDisplay] = useState(1)
     const [errors, setErrors] = useState([]);
     const [suggestedCoins, setSuggestedCoins] = useState([])
-    // const [searchTerm, setSearchCoinTerm] = useState('')
+    const [searchTerm, setSearchCoinTerm] = useState('')
     const [singleCoin, setSingleCoin] = useState('')
 
     const dispatch = useDispatch();
@@ -57,33 +57,35 @@ const Home = () => {
         waitRes()
     }, [dispatch, display])
 
-    const lookUpCoin = async(searchTerm) => {
+    const lookUpCoin = async(targetE) => {
+        let timeId;
         setSuggestedCoins([{
-        iconUrl: 'https://ps.w.org/custom-search-plugin/assets/icon-256x256.gif?rev=2617097',
-        name: 'searching...',
-        symbol: 'searching'
-    }])
-    console.log(searchTerm)
-    setTimeout(async() => {
-        const res = await fetch(`/api/markets/search?crypto=${searchTerm}`,{
-            headers: {
-                'Content-Type': 'application/json'
+            iconUrl: 'https://ps.w.org/custom-search-plugin/assets/icon-256x256.gif?rev=2617097',
+            name: 'searching...',
+            symbol: 'searching'
+        }])
+        clearTimeout(timeId)
+        setSearchCoinTerm(targetE)
+        timeId = setTimeout(async() => {
+            const res = await fetch(`/api/markets/search?crypto=${searchTerm}`,{
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            console.log('Fire!')
+            if(res.ok){
+                const query = await res.json();
+                if (query.allMarkets.code === "RATE_LIMIT_EXCEEDED") setSuggestedCoins([{
+                    iconUrl: 'https://i.pinimg.com/originals/4b/2d/92/4b2d92c479765803893c07024d2566d2.gif',
+                    name: 'No coins found',
+                    symbol: 'searching'
+                }])
+                else if(query.allMarkets.data.coins) setSuggestedCoins(query.allMarkets.data.coins.splice(0,3))
+                else setSuggestedCoins(['no coin with that name'])
+            } else {
+                setSuggestedCoins(['no coin with that name'])
             }
-        });
-        if(res.ok){
-            const query = await res.json();
-            console.log(query)
-            if (query.allMarkets.code === "RATE_LIMIT_EXCEEDED") setSuggestedCoins([{
-                iconUrl: 'https://i.pinimg.com/originals/4b/2d/92/4b2d92c479765803893c07024d2566d2.gif',
-                name: 'No coins found',
-                symbol: 'searching'
-            }])
-            else if(query.allMarkets.data.coins) setSuggestedCoins(query.allMarkets.data.coins.splice(0,3))
-            else setSuggestedCoins(['no coin with that name'])
-        } else {
-            setSuggestedCoins(['no coin with that name'])
-        }
-    }, 4000)
+        }, 3000)
     }
 
     const setSearchCoin = (coin) => {
