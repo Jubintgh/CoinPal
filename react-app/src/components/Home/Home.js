@@ -128,16 +128,16 @@ const Home = () => {
                         </div>: <></>}
                         {suggestedCoins && suggestedCoins.map(coin => (
                            coin.symbol === "searching" ?
-                                    <p id='coin-searching'>
-                                    <img id='seach_profile_pic' src={coin.iconUrl} alt='profile_pic'/>
-                                    {coin.name}
-                                    </p>
+                                <p id='coin-searching'>
+                                <img id='seach_profile_pic' src={coin.iconUrl} alt='profile_pic'/>{coin.name}
+                                </p>
                             :
-                            <li onClick={e => setSearchCoin(coin)} key={coin.symbol} className='search_result_home'>
-                                <img id='seach_profile_pic' src={coin.iconUrl} alt='profile_pic'/>
-                                <p className='search_name_home'>{coin.name}</p>
-                                <h5 className='more-info'> Click here!</h5>
-                            </li>
+                                <li onClick={e => setSearchCoin(coin)} key={coin.symbol} className='search_result_home'>
+                                    {console.log(coin, 'asdasd_1')}
+                                    <img id='seach_profile_pic' src={coin.iconUrl} alt='profile_pic'/>
+                                    <p className='search_name_home'>{coin.name}</p>
+                                    <h5 className='more-info'>Click here!</h5>
+                                </li>
                         ))}
                         {/* {(display === 1) ?<button className='crypto_search_btn' onClick={e => lookUpCoin(e.target.value)}>Search</button>: <></>} */}
                     </>

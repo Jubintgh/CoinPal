@@ -1,11 +1,13 @@
-import 
+import setSearchCoin from './Home';
+
 const CoinsData = ({allCoins}) => {
     
     return(
         <ul className='home_navbar_items_holder'>
             {allCoins && Object.keys(allCoins).map(coin => {
                     return(
-                        <li key={coin} className='home_navbar_items'>
+                        <li key={coin} className='home_navbar_items' >
+                            
                             <img className='coin_icon' src={allCoins[coin].iconUrl} alt='coin_icon'/>
                             <table id='customers'>
                                 <thead>
