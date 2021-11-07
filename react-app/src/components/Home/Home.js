@@ -15,10 +15,11 @@ const Home = () => {
 
     const [switcher, setSwitcher] = useState(false)
     const [display, setDisplay] = useState(1)
-    const [errors, setErrors] = useState([]);
+    const [error, setErrors] = useState([]);
     const [suggestedCoins, setSuggestedCoins] = useState([])
     const [searchTerm, setSearchCoinTerm] = useState('')
     const [singleCoin, setSingleCoin] = useState('')
+    const [latestSearch, setLatestSearch] = useState(0)
 
     const dispatch = useDispatch();
     useEffect(() => {
@@ -51,22 +52,23 @@ const Home = () => {
             setTimeout(async()=> {
                 if (!allCoins) setSwitcher(false)
                 else setSwitcher(true)
-            }, 5000)
+            }, 2000)
         }
 
         waitRes()
     }, [dispatch, display])
 
     const lookUpCoin = async(targetE) => {
-        let timeId;
         setSuggestedCoins([{
             iconUrl: 'https://ps.w.org/custom-search-plugin/assets/icon-256x256.gif?rev=2617097',
             name: 'searching...',
             symbol: 'searching'
         }])
-        clearTimeout(timeId)
+
+        clearTimeout(latestSearch)
         setSearchCoinTerm(targetE)
-        timeId = setTimeout(async() => {
+
+        const timeId = setTimeout(async() => {
             const res = await fetch(`/api/markets/search?crypto=${searchTerm}`,{
                 headers: {
                     'Content-Type': 'application/json'
@@ -85,7 +87,8 @@ const Home = () => {
             } else {
                 setSuggestedCoins(['no coin with that name'])
             }
-        }, 3000)
+        }, 5000)
+        setLatestSearch(timeId)
     }
 
     const setSearchCoin = (coin) => {
