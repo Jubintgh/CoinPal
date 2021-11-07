@@ -1,13 +1,10 @@
-import setSearchCoin from './Home';
-
 const CoinsData = ({allCoins}) => {
     
     return(
         <ul className='home_navbar_items_holder'>
             {allCoins && Object.keys(allCoins).map(coin => {
                     return(
-                        <li key={coin} className='home_navbar_items' >
-                            
+                        <li key={coin} className='home_navbar_items'>
                             <img className='coin_icon' src={allCoins[coin].iconUrl} alt='coin_icon'/>
                             <table id='customers'>
                                 <thead>
@@ -25,7 +22,7 @@ const CoinsData = ({allCoins}) => {
                                     <td>{allCoins[coin].name}</td>
                                     <td>{allCoins[coin].rank}</td>
                                     <td>{coin}</td>
-                                    <td>{allCoins[coin].price}</td>
+                                    <td>$ {allCoins[coin].price}</td>
                                     <td>{allCoins[coin].circulatingSupply}</td>
                                     <td>{allCoins[coin].marketCap}</td>
                                     <td>{allCoins[coin].volume}</td>

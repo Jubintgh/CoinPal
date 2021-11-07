@@ -74,7 +74,6 @@ const Home = () => {
                     'Content-Type': 'application/json'
                 }
             });
-            console.log('Fire!')
             if(res.ok){
                 const query = await res.json();
                 if (query.allMarkets.code === "RATE_LIMIT_EXCEEDED") setSuggestedCoins([{
@@ -87,7 +86,7 @@ const Home = () => {
             } else {
                 setSuggestedCoins(['no coin with that name'])
             }
-        }, 5000)
+        }, 1900)
         setLatestSearch(timeId)
     }
 
@@ -116,7 +115,7 @@ const Home = () => {
                 {/* <img id='side_bar_logo' src='https://user-images.githubusercontent.com/73211975/127380259-8872d61e-851a-4aa5-8152-baec2618e00d.png' alt='logo'/> */}
                 <h1 id='side_bar_title'>Menu</h1>
                 {Object.keys(sideBarObjects).map(bar => 
-                    (<button className='home_navbar_btns' onClick={() => setDisplay(sideBarObjects[bar])}>{bar}</button>)
+                    (<button className='home_navbar_btns' onClick={() => setDisplay(sideBarObjects[bar])}>{bar} &raquo;</button>)
                 )}
             </div>
             <div className='main_bar'>
@@ -133,7 +132,6 @@ const Home = () => {
                                 </p>
                             :
                                 <li onClick={e => setSearchCoin(coin)} key={coin.symbol} className='search_result_home'>
-                                    {console.log(coin, 'asdasd_1')}
                                     <img id='seach_profile_pic' src={coin.iconUrl} alt='profile_pic'/>
                                     <p className='search_name_home'>{coin.name}</p>
                                     <h5 className='more-info'>Click here!</h5>

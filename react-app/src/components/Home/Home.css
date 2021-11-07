@@ -125,7 +125,7 @@
 .home_navbar_items{
   display: flex;
   float: left;
-  cursor: pointer;
+  /* cursor: pointer; */
   flex-direction: row;
   justify-content: space-between;
   box-sizing: border-box;
@@ -185,11 +185,10 @@ canvas{
     padding: 8px;
   }
   
-  #customers tr:nth-child(even){background-color: #f2f2f2;} 
+  #customers tr:nth-child(even){background-color: #ffffff;} 
   
   #customers tr:hover {
-    cursor: pointer;
-    background-color: #ddd;
+    /* background-color: #ddd; */
   }
   
   #customers th {
@@ -275,6 +274,24 @@ canvas{
   .search_name_home{
     width: 20%;
   }
+
+  .back_btn{
+    cursor: pointer;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 1%;
+    background-color: rgb(134, 132, 132);
+    color: white;
+    border-radius: 3px;
+    width: fit-content;
+    height: auto;
+    padding: 1%;
+  }
+  .back_btn:hover{
+    background-color: rgb(79, 80, 80);
+  }
+
+
 
   /* Loader */
   .loader_container{

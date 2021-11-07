@@ -3,15 +3,14 @@ import Charts from './Charts';
 
 const SingleCoinInfo = ({targetCoin})=> {
 
-    const history = useHistory()
 
     return (
 
-        targetCoin.info ? (<div id='coin_description_page'>
-            <button onClick={() => window.location.reload(false)} className='activity_nav_button'>Back to Coin Market</button>
+        targetCoin.info ? (
+        <div id='coin_description_page'>
+            <button onClick={() => window.location.reload(false)} className='back_btn'>&laquo; All Coins</button>
             <img id='search_crypto_logo' src={targetCoin.info?.iconUrl} alt='icon'/>
                 <Charts className='priceChart' coinData={targetCoin.info?.history} coinDataColor={targetCoin.info?.color}/>
-                {console.log(targetCoin.info?.history)}
             <table id='customers'>
                 <thead>
                     <tr>
@@ -25,7 +24,7 @@ const SingleCoinInfo = ({targetCoin})=> {
                     <tr>
                         <td>{targetCoin.info?.name}</td>
                         <td>{targetCoin.info?.rank}</td>
-                        <td>{targetCoin.info?.price}</td>
+                        <td>${targetCoin.info?.price}</td>
                         <td>{targetCoin.info?.circulatingSupply}</td>
                         <td>{targetCoin.info?.marketCap}</td>
                         <td>{targetCoin.info?.volume}</td>
@@ -40,7 +39,7 @@ const SingleCoinInfo = ({targetCoin})=> {
         </div>)
         :
 
-        (<h5>Data for this specific Crypto is not available at the moment please try again later</h5>)
+        (<h2>Data for this specific Crypto is not available at the moment please try again later or check out another coin!</h2>)
     )
         
 }
