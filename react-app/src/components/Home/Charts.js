@@ -3,9 +3,9 @@ import {Line} from 'react-chartjs-2';
 
 
 const Charts = ({coinData, coinDataColor}) => {
-    let acc = 27;
+    let acc = 30;
     const timeLabels = coinData.map(time => {
-      return `${acc -= 1} days ago`;
+      return `${acc -= 1 } days ago`;
     },)
 
     const state = {

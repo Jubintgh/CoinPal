@@ -19,6 +19,7 @@ export const getAllCoins = () => async (dispatch) => {
         }
     });
     if (response.ok){
+        //allCoins from /api/markets.coins endpoints
         const data = await response.json();
         if(data.erros){
             return data.erros;

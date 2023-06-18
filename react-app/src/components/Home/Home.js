@@ -100,7 +100,7 @@ const Home = () => {
 
     const sideBarObjects = {
         'Coins Market Data':1, 
-        'Market Data': 2, 
+        // 'Market Data': 2, 
         'About': 4
     }
     
@@ -134,7 +134,7 @@ const Home = () => {
                                 <li onClick={e => setSearchCoin(coin)} key={coin.symbol} className='search_result_home'>
                                     <img id='seach_profile_pic' src={coin.iconUrl} alt='profile_pic'/>
                                     <p className='search_name_home'>{coin.name}</p>
-                                    <h5 className='more-info'>Click here!</h5>
+                                    <h5 className='more-info'>Click!</h5>
                                 </li>
                         ))}
                         {/* {(display === 1) ?<button className='crypto_search_btn' onClick={e => lookUpCoin(e.target.value)}>Search</button>: <></>} */}

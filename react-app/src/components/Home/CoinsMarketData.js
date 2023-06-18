@@ -13,9 +13,9 @@ const CoinsData = ({allCoins}) => {
                                         <th style={{backgroundColor: allCoins[coin].color}}>Rank</th>
                                         <th style={{backgroundColor: allCoins[coin].color}}>Symbol</th>
                                         <th style={{backgroundColor: allCoins[coin].color}}>Price</th>
-                                        <th style={{backgroundColor: allCoins[coin].color}}>Circulating Supply</th>
+                                        {/* <th style={{backgroundColor: allCoins[coin].color}}>Circulating Supply</th> */}
                                         <th style={{backgroundColor: allCoins[coin].color}}>Market Cap</th>
-                                        <th style={{backgroundColor: allCoins[coin].color}}>Volume</th>
+                                        {/* <th style={{backgroundColor: allCoins[coin].color}}>Volume</th> */}
                                     </tr>
                                 </thead>
                                 <tr>
@@ -23,9 +23,9 @@ const CoinsData = ({allCoins}) => {
                                     <td>{allCoins[coin].rank}</td>
                                     <td>{coin}</td>
                                     <td>$ {allCoins[coin].price}</td>
-                                    <td>{allCoins[coin].circulatingSupply}</td>
+                                    {/* <td>{allCoins[coin].circulatingSupply}</td> */}
                                     <td>{allCoins[coin].marketCap}</td>
-                                    <td>{allCoins[coin].volume}</td>
+                                    {/* <td>{allCoins[coin].volume}</td> */}
                                 </tr>
                             </table>
                         </li>
