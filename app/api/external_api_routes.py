@@ -14,7 +14,7 @@ def get_coin_info():
     url= f'https://api.coinranking.com/v2/search-suggestions?query={search}'
 
     headers = {
-        'x-rapidapi-key': "8ed4d1f157mshd202dc98f1ce45cp1c9d02jsn0b6784e75f03"
+        'x-rapidapi-key': "coinrankinge5b7fd7ce6ceeb2146bdecf169639ed7f66a32eba3b37822"
     }
 
     response = requests.request("GET", url, headers=headers)
@@ -30,29 +30,29 @@ def get_coins():
     time = request.args.get('time')
     if not time:
         time = '30d'
-    url = f'https://coinranking1.p.rapidapi.com/coins?timePeriod={time}'
+    url = f'https://api.coinranking.com/v2/coins?timePeriod={time}'
 
     headers = {
         'x-rapidapi-host': "coinranking1.p.rapidapi.com",
-        'x-rapidapi-key': "8ed4d1f157mshd202dc98f1ce45cp1c9d02jsn0b6784e75f03"
+        'x-rapidapi-key': "coinrankinge5b7fd7ce6ceeb2146bdecf169639ed7f66a32eba3b37822"
     }
 
     response = requests.request("GET", url, headers=headers)
 
     all_info = response.json()
-
+    
     all_coins = [ {
         
         info['symbol']: {
-            'id': info['id'],
+            # 'id': info['id'],
             'rank': info['rank'],
             'name': info['name'],
             'price': info['price'],
-            'circulatingSupply': info['circulatingSupply'],
+            # 'circulatingSupply': info['circulatingSupply'],
             'marketCap': info['marketCap'],
-            'volume': info['volume'],
-            'description': info['description'],
-            'history': info['history'],
+            # 'volume': info['volume'],
+            # 'description': info['description'],
+            'history': info['sparkline'],
             'color': info['color'],
             'iconUrl': info['iconUrl'],
 
@@ -66,11 +66,14 @@ def get_coins():
 @external_market_routes.route('/info')
 def get_markets():
 
-    url = "https://coinranking1.p.rapidapi.com/exchanges"
+    time = request.args.get('time')
+    if not time:
+        time = '30d'
+    url = f'https://api.coinranking.com/v2/coins?timePeriod={time}'
 
     headers = {
         'x-rapidapi-host': "coinranking1.p.rapidapi.com",
-        'x-rapidapi-key': "8ed4d1f157mshd202dc98f1ce45cp1c9d02jsn0b6784e75f03"
+        'x-rapidapi-key': "coinrankinge5b7fd7ce6ceeb2146bdecf169639ed7f66a32eba3b37822"
         }
 
     response = requests.request("GET", url, headers=headers)
@@ -80,13 +83,21 @@ def get_markets():
     
     info['name']: {
         'id': info['id'],
-        'marketShare': info['marketShare'],
-        'numberOfMarkets': info['numberOfMarkets'],
-        'rank': info['rank'],
-        'volume': info['volume'],
-        'description': info['description'],
-        'verified': info['verified'],
-        'iconUrl': info['iconUrl'],
+        # 'id': info['id'],
+        'marketShare': "12.2209741947213",
+        # 'marketShare': info['marketShare'],
+        'numberOfMarkets': 3,
+        # 'numberOfMarkets': info['numberOfMarkets'],
+        'rank': 1,
+        # 'rank': info['rank'],
+        'volume': 6554685985.623574,
+        # 'volume': info['volume'],
+        'description': "Binance is a blockchain ecosystem cryptocurrency exchange.",
+        # 'description': info['description'],
+        'verified': True,
+        # 'verified': info['verified'],
+        'iconUrl': "https://cdn.coinranking.com/mDTK5qrmq/binance.svg",
+        # 'iconUrl': info['iconUrl'],
     } for info in all_info['data']['exchanges']}]
 
     if all_info['status'] == "success":
